@@ -1,26 +1,19 @@
-# SAM AI MEDIA FACTORY — Phase 2
+# SAM AI MEDIA FACTORY — Phase 3 foundation
 
-A Streamlit content-planning dashboard with free template-based content packs and optional AI-generated scripts using an OpenAI API key.
+This release adds a cinematic scene prompt planner and working MP4 clip assembly to your Streamlit dashboard.
 
-## Features
-- Dashboard and project targets
-- Template-based idea angles (not live trend research)
-- Script Studio with hook, script, caption, hashtags and scene list
-- Optional OpenAI API script generation
-- Downloadable content packs and library backups
-- Production planner, publishing checklist and analytics placeholders
+## Included
+- Cinematic scene prompts for three moving scenes
+- Upload up to five existing MP4 clips (25 MB each)
+- Normalize and join the clips with FFmpeg
+- Preview and download assembled MP4
+- Basic script/research outlines, production checklist, publishing/analytics placeholders
+
+## Not included yet
+True AI text-to-video generation, audio narration, subtitles, automatic publishing, and analytics require further integrations. The app does not generate AI video from prompts by itself. A GPU or video inference API is required for that.
+
+## Upgrade warning
+This app.py **replaces the Phase 2 app**, and Phase 2 content library functions are not retained. Download any saved content packs **before** uploading this version. Streamlit Community Cloud local files are not durable.
 
 ## Deploy
-Upload `app.py`, `requirements.txt`, and `README.md` to the root of your existing GitHub repository, replacing the previous files. Streamlit Community Cloud automatically redeploys changes to the selected branch.
-
-## API mode
-OpenAI API billing is separate from ChatGPT Plus. For a persistent key, set `OPENAI_API_KEY` in Streamlit Community Cloud app settings → Secrets (do not put keys in GitHub). Example:
-
-```toml
-OPENAI_API_KEY = "your-key-here"
-```
-
-Alternatively enter a key temporarily in the password field. Do not share keys or commit them.
-
-## Limitations
-This app does not generate finished videos, auto-post to social networks, or pull real-time trend/analytics data. Cloud-local JSON storage can reset; export backups. Templates are not AI generation and must be reviewed and fact-checked.
+Upload app.py, requirements.txt, README.md, and .gitignore to your existing GitHub repository root. The existing Streamlit site should redeploy.
